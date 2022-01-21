@@ -38,7 +38,7 @@
             <div class="password">
                 <label style="margin-top: 20px" for="psw">Password</label>
                 <input style="margin-top: 10px;" type="password" class="form-control" id="psw" placeholder= "Enter your password">
-                <button style="margin-top: 40px" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                <a href="home.php" style="margin-top: 40px" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</a>
                 <!-- <p class="mt-5 mb-3 text-muted">© 2017–2021</p> -->
                 <p style="    margin-top: 20px; text-align: center;">forgot your password? <a href="#" style="color:skyblue; padding: 0px 0px 5px 0px;"  class="btn">Reset password</a></p>
             </div>
