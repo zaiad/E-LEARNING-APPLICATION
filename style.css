@@ -1,5 +1,5 @@
-*
-{
+
+*{
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
@@ -18,14 +18,7 @@
     height: 648px;
 
 }
-#sidebar2
-{
-    display: none;
-}
-span
-{
-    color:#00C1FE ;
-}
+
 .card
 {
     background:#FAFFC1 ;
@@ -35,15 +28,8 @@ span
 {
     background-color:#FAFFC1 ;
     border: none;
-}
-::placeholder
-{
-    font-size: 15px;
-}
-#list-tab-mob
-{
-    display: none;
-}
+} 
+
 
 @media only screen and (max-width:800px) {
     
@@ -54,9 +40,9 @@ span
       box-sizing: border-box;
       overflow-x: hidden;
  }
- #circle
+  #circle
  {
-    display: none;
+    display: none; 
  }
  #hum-menu
  {
@@ -65,7 +51,7 @@ span
  #check:checked + #sidebar
  {
      display: block; 
-     width: 50%;
+     width: 50%; 
  }
  #lab
  {
@@ -88,7 +74,7 @@ span
  }
 #list-tab-mob
 {
-    display: block;
+    display: block; 
 }
 #arrow{
     display: none;
