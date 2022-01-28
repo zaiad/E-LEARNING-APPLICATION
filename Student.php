@@ -36,7 +36,9 @@ include ('navbar.php')
                 <div class="">
                     <div class="d-flex justify-content-between">
                     <h2 class="fw-bold">students lists</h2>
-                    <i class="bi bi-chevron-expand fs-3 text-info"></i>
+                    <div>
+                        <i class="bi bi-chevron-expand fs-3 text-info"></i><button class="p-2" style="background-color: #00C1FE; color:white; border:none; border-radius:5px;">ADD NEW STUDENT</button>
+                    </div>
                    </div>
                      <div class="table-responsive ">
                <table class="table table-hover">
@@ -50,60 +52,11 @@ include ('navbar.php')
                        <th  class="text-secondary">Enroll Number</th>
                        <th  class="text-secondary" colspan="2">Date of admission</th>  
                      </tr>
+
                      <?php  
-                      
-                      $students = [
-                          [
-                              'name'=> 'username',
-                              'email' => 'user@gmail.com',
-                              'phone' => '0933477800',
-                              'enroll_number' => '12345678910',
-                              'date_of_admission' => '16-Jan,2022'
-                          ],
-                          [
-                              'name'=> 'username',
-                              'email' => 'user@gmail.com',
-                              'phone' => '0933477800',
-                              'enroll_number' => '12345678910',
-                              'date_of_admission' => '16-Jan,2022'
-                          ],
-                          [
-                              'name'=> 'username',
-                              'email' => 'user@gmail.com',
-                              'phone' => '0933477800',
-                              'enroll_number' => '12345678910',
-                              'date_of_admission' => '16-Jan,2022'
-                          ],
-                          [
-                              'name'=> 'username',
-                              'email' => 'user@gmail.com',
-                              'phone' => '0933477800',
-                              'enroll_number' => '12345678910',
-                              'date_of_admission' => '16-Jan,2022'
-                          ],
-                          [
-                              'name'=> 'username',
-                              'email' => 'user@gmail.com',
-                              'phone' => '0933477800',
-                              'enroll_number' => '12345678910',
-                              'date_of_admission' => '16-Jan,2022'
-                          ],
-                          [
-                              'name'=> 'username',
-                              'email' => 'user@gmail.com',
-                              'phone' => '0933477800',
-                              'enroll_number' => '12345678910',
-                              'date_of_admission' => '16-Jan,2022'
-                          ],
-                          [
-                              'name'=> 'username',
-                              'email' => 'user@gmail.com',
-                              'phone' => '0933477800',
-                              'enroll_number' => '12345678910',
-                              'date_of_admission' => '16-Jan,2022'
-                          ],
-                      ];
-                      foreach($students as $student){
+                        $Data = file_get_contents('studentlist.json');
+                        $student = json_decode($Data,true);
+                      foreach($student as $student){
                           echo'<tr>
                           <td class="text-black "> <img src="img/username.png" alt="" ></td>
                           <td class="text-black py-4">'.$student['name'].'</td>

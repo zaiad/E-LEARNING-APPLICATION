@@ -18,15 +18,15 @@
 
           <?php  
 
-          include ('sidebar.php')
+             include ('sidebar.php')
 
           ?>
 
-                  <div class="container"> 
+              <div class="container"> 
 
           <?php  
 
-          include ('navbar.php')
+              include ('navbar.php')
 
           ?>
 
@@ -36,95 +36,47 @@
 
                 <div class="payment">
                     <div class="d-flex justify-content-between">
-                    <h2 class="fw-bold">Payments Details</h2>
-                    <i class="bi bi-chevron-expand fs-3 text-info"></i>
+                        <h2 class="fw-bold">Payments Details</h2>
+                        <i class="bi bi-chevron-expand fs-3 text-info"></i>
                    </div>
-                     <div class="table-responsive ">
-               <table class="table table-hover table-striped ">
-                   <thead style="display: none;">
-                     <!-- <tr >
-                       <td scope="col">#</td>
-                       <th scope="col">First</th>
-                       <th scope="col">Last</th>
-                       <th scope="col">Handle</th>
-                     </tr> -->
-                   </thead>
-                   <tbody class="border-top-0">
-                       <tr>
-                       <td scope="row" class="text-secondary">Name</td>
-                       <td  class="text-secondary">Payment Schedule</td>
-                       <td  class="text-secondary">Bill Number</td>
-                       <td  class="text-secondary">Amount Paid</td>
-                       <td  class="text-secondary">Balance amount</td>
-                       <td  class="text-secondary" colspan="2">Date</td>  
-                     </tr>
-                    
-                    <?php 
-                    
-                    
-                    $payments = [
-                      [
-                        'name' => 'karthi',
-                        'payment_schedule' =>'first',
-                        'bill_number' => '00012223',
-                        'amount_paid' => 'DHS 100,000',
-                        'balance_amount' => 'DHS 500,000',
-                        'date' => '05-Jan, 2022'
-                      ],
-                      [
-                        'name' => 'karthi',
-                        'payment_schedule' =>'first',
-                        'bill_number' => '00012223',
-                        'amount_paid' => 'DHS 100,000',
-                        'balance_amount' => 'DHS 500,000',
-                        'date' => '05-Jan, 2022'
-                      ],
-                      [
-                        'name' => 'karthi',
-                        'payment_schedule' =>'first',
-                        'bill_number' => '00012223',
-                        'amount_paid' => 'DHS 100,000',
-                        'balance_amount' => 'DHS 500,000',
-                        'date' => '05-Jan, 2022'
-                      ],
-                      [
-                        'name' => 'karthi',
-                        'payment_schedule' =>'first',
-                        'bill_number' => '00012223',
-                        'amount_paid' => 'DHS 100,000',
-                        'balance_amount' => 'DHS 500,000',
-                        'date' => '05-Jan, 2022'
-                      ],
-                      [
-                        'name' => 'karthi',
-                        'payment_schedule' =>'first',
-                        'bill_number' => '00012223',
-                        'amount_paid' => 'DHS 100,000',
-                        'balance_amount' => 'DHS 500,000',
-                        'date' => '05-Jan, 2022'
-                      ],
-                    ];
-                    foreach ($payments as $payment){
-                      echo' <tr>
-                                <td class="text-black">'.$payment['name'].'</td>
-                                <td class="text-black">'.$payment['payment_schedule'].'</td>
-                                <td class="text-black">'.$payment['bill_number'].'</td>
-                                <td class="text-black">'.$payment['amount_paid'].'</td>
-                                <td class="text-black">'.$payment['balance_amount'].'</td>
-                                <td class="text-black">'.$payment['date'].'</td>
-                                <td><i class="bi bi-eye text-info"></i></td>
-                            </tr>';
-                      }
-                    
-                    ?>
-                    
-                    
-                     
-                    
-                   </tbody>
-                 </table>
-                </div>
-               </div> 
+                   <div class="table-responsive ">
+                      <table class="table table-hover table-striped ">
+
+                        <tbody class="border-top-0">
+                            <tr>
+                                <td scope="row" class="text-secondary">Name</td>
+                                <td  class="text-secondary">Payment Schedule</td>
+                                <td  class="text-secondary">Bill Number</td>
+                                <td  class="text-secondary">Amount Paid</td>
+                                <td  class="text-secondary">Balance amount</td>
+                                <td  class="text-secondary" colspan="2">Date</td>  
+                            </tr>
+                          
+                          <?php 
+                          
+                          $Data = file_get_contents('paymentlist.json');
+                          $payment = json_decode($Data,true);
+                          foreach ($payment as $payment){
+                            echo' <tr>
+                                      <td class="text-black">'.$payment['name'].'</td>
+                                      <td class="text-black">'.$payment['payment_schedule'].'</td>
+                                      <td class="text-black">'.$payment['bill_number'].'</td>
+                                      <td class="text-black">'.$payment['amount_paid'].'</td>
+                                      <td class="text-black">'.$payment['balance_amount'].'</td>
+                                      <td class="text-black">'.$payment['date'].'</td>
+                                      <td><i class="bi bi-eye text-info"></i></td>
+                                  </tr>';
+                            }
+                          
+                          ?>
+                          
+                          
+                          
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                </div> 
 
 
 

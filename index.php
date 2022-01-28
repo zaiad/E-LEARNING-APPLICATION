@@ -30,7 +30,7 @@
                 <input style="margin-top: 10px;" type="password" class="form-control" id="psw" placeholder= "Enter your password">
                 <a href="home.php" style="margin-top: 40px; background-color: #00C1FE" class="w-100 btn btn-lg " type="submit">Sign in</a>
                
-                <p style="    margin-top: 20px; text-align: center;">forgot your password? <a href="#" style="color:skyblue; padding: 0px 0px 5px 0px;"  class="btn">Reset password</a></p>
+                <p style=" margin-top: 20px; text-align: center;">forgot your password? <a href="#" style="color:skyblue; padding: 0px 0px 5px 0px;"  class="btn">Reset password</a></p>
             </div>
         </div>
         
