@@ -35,19 +35,39 @@
 
         <div class="submit">
 
-            <form>
-                <img src="img/username.png" alt="user">
-                <p>ADD NEW STUDENT</p>
-                <div class=" name form-floating">
-                    <label for="usr">Full name</label>
-                    <input type="text" class="form-control" id="usr" >
+            <form action="connecte.php" method="POST" class="bg-light w-75 mx-auto py-1 shadow p-3 mb-5 bg-body" style="border-radius: 20px;">
+                <div>
+                    <img src="img/username.png" alt="user" class="rounded-circle mx-auto d-block">
+                    <p class="text-center text-secondary fs-4 fw-bold">ADD NEW STUDENT</p>
+                </div>
+                <div class=" name  mx-auto w-75">
+                    <div class="form-floating mb-3">
+                        <input type="text" name="name" style="border-radius: 10px;" class="form-control bg-info" id="name" placeholder="name@example.com" required>
+                        <label for="name" class="text-nowrap">Full name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" style="border-radius: 10px;" class="form-control bg-info" id="email" name="email" placeholder="name@example.com" required>
+                        <label for="email" >Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" style="border-radius: 10px;" class="form-control bg-info" id="phone" placeholder="name@example.com" required name="phone">
+                        <label for="phone" >Phone</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" style="border-radius: 10px;" class="form-control bg-info" id="enroll_number" placeholder="name@example.com" required name="enroll_number">
+                        <label for="enroll_number" class="text-nowrap">Enroll number</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="date" style="border-radius: 10px;" class="form-control bg-info" id="date_of_admission" required name="date_of_admission">
+                        <label for="date_of_admission" >Date</label>
+                    </div>
+                    <button class="btn btn-secondary w-25 mx-auto d-block" type="submit" name="save">Save</button>
+                    <!-- <input class="btn btn-primary mx-auto d-block" type="submit" value="Submit"> -->
+                    <!-- <button type="submit" class="p-1 w-25 mx-auto d-block" style="border:none; background-color:royalblue; border-radius:5px;">submit</button> -->
+
 
                 </div>
-
             </form>
-
-
-
 
         </div> 
     </div>
@@ -55,35 +75,4 @@
 
 </body>
 </html>
-
-
-
-
-
-
-<!-- <section>
-              <img class="mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-                    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-                    <div class="form-floating">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Email address</label>
-                    </div>
-                    <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                        <label for="floatingPassword">Password</label>
-                    </div>
-
-                    <div class="checkbox mb-3">
-                        <label>
-                            <input type="checkbox" value="remember-me"> Remember me
-                        </label>
-                    </div>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-                    <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
-
-
-
-</section> -->
-
 

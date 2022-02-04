@@ -37,7 +37,7 @@ include ('navbar.php')
                     <div class="d-flex justify-content-between">
                     <h2 class="fw-bold">students lists</h2>
                     <div>
-                        <i class="bi bi-chevron-expand fs-3 text-info"></i><button class="p-2" style="background-color: #00C1FE; color:white; border:none; border-radius:5px;">ADD NEW STUDENT</button>
+                        <i class="bi bi-chevron-expand fs-3 text-info"></i><a href="add.php" class="p-2 text-nowrap" style="background-color: #00C1FE; color:white; border:none; border-radius:5px; text-decoration:none;">ADD NEW STUDENT</a>
                     </div>
                    </div>
                      <div class="table-responsive ">
@@ -54,27 +54,32 @@ include ('navbar.php')
                      </tr>
 
                      <?php  
-                        $Data = file_get_contents('studentlist.json');
-                        $student = json_decode($Data,true);
-                      foreach($student as $student){
-                          echo'<tr>
-                          <td class="text-black "> <img src="img/username.png" alt="" ></td>
-                          <td class="text-black py-4">'.$student['name'].'</td>
-                          <td class="text-black py-4">'.$student['email'].'</td>
-                          <td class="text-black py-4">'.$student['phone'].'</td>
-                          <td class="text-black py-4">'.$student['enroll_number'].'</td>
-                          <td class="text-black py-4">'.$student['date_of_admission'].'</td>
-                          <td class="py-4 d-flex justify-content-evenly"><i class="bi bi-pen text-info" id="text-ciel"></i><i class="bi bi-trash text-info" id="text-ciel"></i></td>
-                      </tr>';
-                      }
+                        $conn = new mysqli('localhost' , 'root', '' ,'e_classe_db');
 
-                     
-                     
-                     ?>
-                    
+                        if ($conn->connect_error) {
+                          die('Connection failed: '. $conn  ->connect_error);
+                        }
 
-                     
-                    
+                        $sql = "SELECT name, email, phone, enroll_number, date_of_admission from students order by id desc";
+                        $result =$conn->query($sql);
+
+                        if ($result-> num_rows > 0) {
+                            while ($row = $result-> fetch_assoc()) {
+                                echo '<tr>
+                                    <td class="text-black "> <img src="img/username.png" alt="" ></td>
+                                    <td class="text-black py-4">'.$row['name'].'</td>
+                                    <td class="text-black py-4">'.$row['email'].'</td>
+                                    <td class="text-black py-4">'.$row['phone'].'</td> 
+                                    <td class="text-black py-4">'.$row['enroll_number'].'</td>
+                                    <td class="text-black py-4">'.$row['date_of_admission'].'</td>
+                                    <td class="py-4 d-flex justify-content-evenly">
+                                    <a href="student.php?edit=<?php echo $row["id"]"><i class="bi bi-pen text-info" id="text-ciel"></i></a>
+                                    <a href="connecte.php"><i class="bi bi-trash text-info" id="text-ciel"></i></a></td>
+                                </tr>';
+                            }
+                        }
+                        $conn->close();
+                        ?>
                    </tbody>
                  </table>
                 </div>
